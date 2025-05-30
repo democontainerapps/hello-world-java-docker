@@ -1,0 +1,9 @@
+FROM cgr.dev/chainguard/jdk:latest-dev
+
+LABEL BASE_IMAGE="openjdk:11-ea-9-jdk-slim-sid"
+
+WORKDIR /work/
+COPY target/*.jar /work/application.jar
+
+EXPOSE 8080
+CMD ["java", "-jar", "application.jar"]
